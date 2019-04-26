@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry
+            location="D:/mavenJar/mysql/mysql-connector-java/6.0.6/mysql-connector-java-6.0.6.jar"/>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <!--实体生成toString() -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/test?serverTimezone=UTC&amp;useSSL=false&amp;nullNamePatternMatchesAll=true&amp;nullCatalogMeansCurrent=true"
+                        userId="root" password="123456">
+        </jdbcConnection>
+
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.emerging.service.persistence.model"
+                            targetProject="cloud-emerging-service-persist/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.emerging.service.persistence.mapper"
+                         targetProject="cloud-emerging-service-persist/src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.emerging.service.persistence.mapper"
+                             targetProject="cloud-emerging-service-persist/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+
+        </javaClientGenerator>
+
+
+        <!--风险企业-->
+        <table tableName="t_user" domainObjectName="UserModel" >
+        		<generatedKey column="id" sqlStatement="Mysql" identity="true" type="post"/>
+        </table>
+
+    </context>
+</generatorConfiguration>

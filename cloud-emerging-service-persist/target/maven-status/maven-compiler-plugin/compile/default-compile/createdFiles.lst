@@ -1,0 +1,7 @@
+com\emerging\persistence\mapper\UserMapper.class
+com\emerging\persistence\model\UserExample$Criteria.class
+com\emerging\persistence\model\User.class
+com\emerging\persistence\model\UserExample$GeneratedCriteria.class
+com\emerging\persistence\mapper\customize\UserCustomizeMapper.class
+com\emerging\persistence\model\UserExample.class
+com\emerging\persistence\model\UserExample$Criterion.class
